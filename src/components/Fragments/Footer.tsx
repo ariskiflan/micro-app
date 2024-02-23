@@ -1,14 +1,10 @@
-import DumbwaysIdLogo from "../../assets/logo.png";
+import Logo from "../Elements/Logo/Logo";
 
 const Footer = () => {
   return (
     <footer>
       <div className="bg-black h-[241px] flex justify-start items-center gap-5 ps-[100px]">
-        <img
-          className="w-[110px] h-[110px]"
-          src={DumbwaysIdLogo}
-          alt="Dumbways Logo"
-        />
+        <Logo width="w-[110px]" height="h-[110px]" />
         <div>
           <p className="text-white text-[24px] font-bold">DUMBWAYS.ID</p>
           <p className="text-white text-wrap w-[300px] text-[16px]">

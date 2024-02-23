@@ -1,8 +1,14 @@
 import LogoImage from "../../../assets/logo.png";
 
-const Logo = () => {
+type Props = {
+  width: string;
+  height: string;
+};
+
+const Logo = (props: Props) => {
+  const { width, height } = props;
   return (
-    <img className="w-[41px] h-[41px]" src={LogoImage} alt="Logo Dumbways" />
+    <img className={`${width} ${height}`} src={LogoImage} alt="Logo Dumbways" />
   );
 };
 
