@@ -1,13 +1,17 @@
-import Navbar from "../components/Fragments/Navbar";
 import MonyetImg from "../assets/monyet.png";
 import Label from "../components/Elements/Input/Label";
 import Input from "../components/Elements/Input/Input";
 import Button from "../components/Elements/Button/Button";
 
+import Navbar from "../components/Fragments/Navbar";
+
 const AddPaslon = () => {
   return (
     <div>
-      <Navbar textNav="DASBOARD PEMILU" />
+      <Navbar
+        textNav="PEMILU PRESIDEN DUMBWAYS.ID"
+        listItem={["Partai", "Paslon"]}
+      />
 
       <main className="flex items-center justify-center flex-col">
         <h1 className="text-[48px] font-[700] mt-[50px] text-login">

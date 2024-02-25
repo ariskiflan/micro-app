@@ -29,7 +29,10 @@ const DetailPage = () => {
   return (
     <div>
       <body className="bg-body">
-        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" />
+        <Navbar
+          textNav="PEMILU PRESIDEN DUMBWAYS.ID"
+          listItem={["Partai", "Paslon", "Voting"]}
+        />
 
         <main className="flex items-center justify-center flex-col">
           <div className="w-[1140px] px-[100px] bg-white flex flex-col items-center justify-center pt-[15px] relative">

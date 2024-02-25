@@ -8,7 +8,7 @@ const Label = (props: Props) => {
     <div>
       <label
         htmlFor=""
-        className="block text-slate-700 text-[24px] font-bold mb-2"
+        className="block text-slate-700 text-[14px] font-bold mb-2"
       >
         {text}
       </label>
