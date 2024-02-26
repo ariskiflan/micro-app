@@ -2,13 +2,21 @@ import Navbar from "../components/Fragments/Navbar";
 import Logo from "../assets/monyet.png";
 
 const ListPartai = () => {
+  const nameList = [
+    {
+      linkTo: "/addpartai",
+      list: "Partai",
+    },
+    {
+      linkTo: "/addpaslon",
+      list: "Paslon",
+    },
+  ];
+
   return (
     <div>
       <body className="bg-white">
-        <Navbar
-          textNav="PEMILU PRESIDEN DUMBWAYS.ID"
-          listItem={["Partai", "Paslon"]}
-        />
+        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
 
         <main className="flex items-center justify-center flex-col">
           <h1 className="text-[48px] font-[900] my-[50px] text-login">

@@ -6,12 +6,20 @@ import Button from "../components/Elements/Button/Button";
 import Navbar from "../components/Fragments/Navbar";
 
 const AddPaslon = () => {
+  const nameList = [
+    {
+      linkTo: "/addpartai",
+      list: "Partai",
+    },
+    {
+      linkTo: "/addpaslon",
+      list: "Paslon",
+    },
+  ];
+
   return (
     <div>
-      <Navbar
-        textNav="PEMILU PRESIDEN DUMBWAYS.ID"
-        listItem={["Partai", "Paslon"]}
-      />
+      <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
 
       <main className="flex items-center justify-center flex-col">
         <h1 className="text-[48px] font-[700] mt-[50px] text-login">

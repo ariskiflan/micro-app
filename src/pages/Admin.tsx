@@ -33,10 +33,21 @@ const Admin = () => {
     },
   ];
 
+  const nameList = [
+    {
+      linkTo: "/addpartai",
+      list: "Partai",
+    },
+    {
+      linkTo: "/addpaslon",
+      list: "Paslon",
+    },
+  ];
+
   return (
     <div>
       <body bg-white>
-        <Navbar textNav="DASHBOARD PEMILU" listItem={["Partai", "Paslon"]} />
+        <Navbar textNav="DASHBOARD PEMILU" listItem={nameList} />
 
         <main className="flex items-center justify-center flex-col my-[50px]">
           <h1 className="text-[48px] font-[700] text-login">DASHBOARD</h1>

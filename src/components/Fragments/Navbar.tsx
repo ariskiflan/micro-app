@@ -5,18 +5,23 @@ import { useState } from "react";
 import Button from "../Elements/Button/Button";
 import Label from "../Elements/Input/Label";
 import Input from "../Elements/Input/Input";
-import ModalLogin from "../../pages/ModalLogin";
-import ModalRegister from "../../pages/ModalRegister";
+import ModalLogin from "./ModalLogin";
+import ModalRegister from "./ModalRegister";
 
 type Props = {
   textNav: string;
-  listItem: string[];
+  // listItem: string[];
+  listItem: {
+    linkTo: string;
+    list: string;
+  }[];
 };
 
 const Navbar = (props: Props) => {
   const { textNav, listItem } = props;
   const [openLogin, setOpenLogin] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
+  const [userLogin, setUserLogin] = useState<boolean>(false);
 
   const handleRegister = (): void => {
     setOpenLogin(false);
@@ -26,6 +31,12 @@ const Navbar = (props: Props) => {
   const handleLogin = (): void => {
     setOpenLogin(true);
     setOpenRegister(false);
+  };
+
+  const loginUser = (e: React.MouseEvent<HTMLElement>): void => {
+    e.preventDefault();
+    setUserLogin(!userLogin);
+    setOpenLogin(false);
   };
 
   // const [isLogin, setIsLogin] = useState(false);
@@ -47,41 +58,30 @@ const Navbar = (props: Props) => {
           <ul className="text-white text-2xl flex items-center gap-5 font-normal">
             {listItem.map((item, index) => (
               <React.Fragment key={index}>
-                <li> {item} </li>
+                <Link to={item.linkTo}>
+                  <li> {item.list} </li>
+                </Link>
                 {index < listItem.length - 1 && <li> | </li>}
               </React.Fragment>
             ))}
-
-            {/* <Link to="/addpartai">
-              <li>Partai</li>
-            </Link>
-            <li>|</li>
-            <Link to="/addpaslon">
-              <li>paslon</li>
-            </Link>
-            <li>|</li>
-            <Link to="/vote">
-              <li>Voting</li>
-            </Link> */}
           </ul>
 
-          {/* <button
-            onClick={handleClick}
-            className={`${
-              isLogin
-                ? "rounded-full bg-white text-black font-bold px-3 py-1"
-                : "bg-white text-black px-5 py-1 rounded-md font-bold"
-            } `}
-          >
-            {isLogin ? "D" : "LOGIN"}
-          </button> */}
-
-          <button
-            className="bg-white text-black px-5 py-1 rounded-md font-bold"
-            onClick={() => setOpenLogin(true)}
-          >
-            Login
-          </button>
+          {userLogin === false ? (
+            <div className="flex items-center">
+              <button
+                className="bg-white text-xl font-bold px-7 py-1 rounded-md ml-5"
+                onClick={() => setOpenLogin(true)}
+              >
+                LOGIN
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center">
+              <button className="bg-white text-xl font-bold h-11 w-11 flex justify-center items-center rounded-full ml-5">
+                A
+              </button>
+            </div>
+          )}
 
           <ModalLogin open={openLogin} onClose={() => setOpenLogin(false)}>
             <div className=" flex items-center justify-center flex-col">
@@ -112,10 +112,12 @@ const Navbar = (props: Props) => {
                   </div>
                 </form>
 
-                <Button
-                  lgnBtn="rounded-[10px] bg-login px-[4px] py-[5px] w-full text-white font-bold text-[14px]"
-                  text="SUBMIT"
-                />
+                <button
+                  onClick={loginUser}
+                  className="rounded-[10px] bg-login px-[4px] py-[5px] w-full text-white font-bold text-[14px]"
+                >
+                  SUBMIT
+                </button>
 
                 <p className="text-[20px] font-[400] text-acount text-center mt-[10px] italic">
                   Belum Punya Akun? {""}

@@ -10,7 +10,7 @@ import Vote from "./pages/Vote.tsx";
 import ListPartai from "./pages/ListPartai.tsx";
 import ListPaslon from "./pages/ListPaslon.tsx";
 import Admin from "./pages/Admin.tsx";
-import ModalVote from "./pages/ModalVote.tsx";
+import ModalVote from "./components/Fragments/ModalVote.tsx";
 
 const router = createBrowserRouter([
   {

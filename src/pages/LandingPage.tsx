@@ -7,13 +7,25 @@ import SampleKpu from "../assets/sample-kpu.png";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
+  const nameList = [
+    {
+      linkTo: "/addpartai",
+      list: "Partai",
+    },
+    {
+      linkTo: "/addpaslon",
+      list: "Paslon",
+    },
+    {
+      linkTo: "/vote",
+      list: "Voting",
+    },
+  ];
+
   return (
     <div>
       <body className="bg-body">
-        <Navbar
-          textNav="PEMILU PRESIDEN DUMBWAYS.ID"
-          listItem={["Partai", "Paslon", "Voting"]}
-        />
+        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
 
         <main className="flex items-center justify-center flex-col z-10">
           {/* HERO */}
