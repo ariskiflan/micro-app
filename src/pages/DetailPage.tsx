@@ -1,6 +1,7 @@
 import Navbar from "../components/Fragments/Navbar";
 import Headline from "../assets/sample-kpu.png";
 import Footer from "../components/Fragments/Footer";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const DetailPage = () => {
   const dummy = [
@@ -48,13 +49,12 @@ const DetailPage = () => {
 
         <main className="flex items-center justify-center flex-col">
           <div className="w-[1140px] px-[100px] bg-white flex flex-col items-center justify-center pt-[15px] relative">
-            <div>
-              <p className="text-[20px] font-[400] absolute left-[100px] top-[15px] ">
-                &#129060; Beranda
-              </p>
-              <p className="text-[20px] font-[400]">BERITA HARI INI</p>
-              <div></div>
+            <div className="absolute left-[100px] top-[15px] flex items-center justify-center gap-[10px]">
+              <FaArrowLeft size="20px" />
+              <p className="text-[20px] font-[400]  ">Beranda</p>
             </div>
+
+            <p className="text-[20px] font-[400]">BERITA HARI INI</p>
 
             <div className="mt-[50px] text-center">
               <h1 className="text-[40px] font-[700] text-login">

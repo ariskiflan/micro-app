@@ -1,13 +1,14 @@
 type Props = {
   text: string;
+  htmlfor: string;
 };
 
 const Label = (props: Props) => {
-  const { text } = props;
+  const { text, htmlfor } = props;
   return (
     <div>
       <label
-        htmlFor=""
+        htmlFor={htmlfor}
         className="block text-slate-700 text-[14px] font-bold mb-2"
       >
         {text}

@@ -1,3 +1,5 @@
+import { FaX } from "react-icons/fa6";
+
 type PropsType = {
   open: boolean;
   onClose: () => void;
@@ -24,9 +26,9 @@ const ModalLogin: React.FC<PropsType> = ({ open, onClose, children }) => {
       >
         <button
           onClick={onClose}
-          className="text-[20px] absolute font-[700] top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600"
+          className="absolute top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600"
         >
-          X
+          <FaX size="20px" color="black" />
         </button>
         {children}
       </div>

@@ -57,7 +57,7 @@ const Admin = () => {
               <div className="flex items-center justify-center w-24 h-24 mx-auto mb-10 bg-dashboard1 border-8 border-login rounded-full text-center text-login text-[40px] font-bold">
                 1
               </div>
-              <div className="bg-dashboard1 rounded-xl p-6">
+              <div className="bg-dashboard1 rounded-xl p-6 shadow-xl shadow-neutral-400">
                 <div className="mb-2">
                   <img
                     src={Monyet2}
@@ -66,7 +66,9 @@ const Admin = () => {
                   />
                 </div>
                 <div className="">
-                  <p className="font-[900] text-[40px] text-login">MALIK</p>
+                  <p className="font-[900] text-[40px] text-login text-outline">
+                    MALIK
+                  </p>
                   <p className="text-login text-[20px] font-[500]">
                     Akumulasi: 45%
                   </p>
@@ -81,7 +83,7 @@ const Admin = () => {
               <div className="flex items-center justify-center w-24 h-24 mx-auto mb-10 bg-dashboard2  border-8 border-nopas2 rounded-full text-center text-nopas2 text-[40px] font-bold">
                 2
               </div>
-              <div className="bg-dashboard2 rounded-xl p-6">
+              <div className="bg-dashboard2 rounded-xl p-6 shadow-xl shadow-neutral-400">
                 <div className="mb-2">
                   <img
                     src={Monyet2}
@@ -90,7 +92,9 @@ const Admin = () => {
                   />
                 </div>
                 <div className="">
-                  <p className="font-[900] text-[40px] text-nopas2">MALIK</p>
+                  <p className="font-[900] text-[40px] text-nopas2 text-outline">
+                    MALIK
+                  </p>
                   <p className="text-nopas2 text-[20px] font-[500]">
                     Akumulasi: 75%
                   </p>
@@ -105,7 +109,7 @@ const Admin = () => {
               <div className="flex items-center justify-center w-24 h-24 mx-auto mb-10 bg-dashboard3 border-8 border-colorpaslon3 rounded-full text-center text-colorpaslon3  text-[40px] font-bold">
                 3
               </div>
-              <div className="bg-dashboard3 rounded-xl p-6">
+              <div className="bg-dashboard3 rounded-xl p-6 shadow-xl shadow-neutral-400">
                 <div className="mb-2">
                   <img
                     src={Monyet2}
@@ -114,7 +118,7 @@ const Admin = () => {
                   />
                 </div>
                 <div className="">
-                  <p className="font-[900] text-[40px] text-colorpaslon3">
+                  <p className="font-[900] text-[40px] text-colorpaslon3 text-outline">
                     MALIK
                   </p>
                   <p className="text-colorpaslon3 text-[20px] font-[500]">
@@ -137,19 +141,19 @@ const Admin = () => {
             <table className="text-left border border-collapse table-auto border-slate-400 border-spacing-x-5">
               <thead className="">
                 <tr className="bg-white">
-                  <th className="p-3 text-center border bg-slate-200 border-slate-300">
+                  <th className="p-3 text-center border bg-thead border-line">
                     No
                   </th>
-                  <th className="border ps-2 pe-40 bg-slate-200 border-slate-300">
+                  <th className="border ps-2 pe-40 bg-thead border-line">
                     Nama
                   </th>
-                  <th className="border ps-2 pe-40 bg-slate-200 border-slate-300">
+                  <th className="border ps-2 pe-40 bg-thead border-line">
                     Alamat
                   </th>
-                  <th className="border ps-2 pe-40 bg-slate-200 border-slate-300">
+                  <th className="border ps-2 pe-40 bg-thead border-line">
                     Jenis Kelamin
                   </th>
-                  <th className="border ps-2 pe-40 bg-slate-200 border-slate-300">
+                  <th className="border ps-2 pe-40 bg-thead border-line">
                     Paslon
                   </th>
                 </tr>
@@ -157,21 +161,13 @@ const Admin = () => {
               <tbody>
                 {listTable.map((item) => (
                   <tr className="bg-white">
-                    <td className="py-2 text-center border border-slate-300">
+                    <td className="py-2 text-center border border-line">
                       {item.no}
                     </td>
-                    <td className="border ps-2 border-slate-300">
-                      {item.name}
-                    </td>
-                    <td className="border ps-2 border-slate-300">
-                      {item.addres}
-                    </td>
-                    <td className="border ps-2 border-slate-300">
-                      {item.gender}
-                    </td>
-                    <td className="border ps-2 border-slate-300">
-                      {item.paslon}
-                    </td>
+                    <td className="border ps-2 border-line">{item.name}</td>
+                    <td className="border ps-2 border-line">{item.addres}</td>
+                    <td className="border ps-2 border-line">{item.gender}</td>
+                    <td className="border ps-2 border-line">{item.paslon}</td>
                   </tr>
                 ))}
               </tbody>

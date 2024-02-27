@@ -2,13 +2,15 @@ type Props = {
   placeholder: string;
   type: string;
   name: string;
+  id: string;
 };
 
 const Input = (props: Props) => {
-  const { placeholder, type, name } = props;
+  const { placeholder, type, name, id } = props;
   return (
     <div>
       <input
+        id={id}
         type={type}
         name={name}
         placeholder={placeholder}

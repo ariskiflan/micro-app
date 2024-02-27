@@ -6,6 +6,8 @@ import Navbar from "../components/Fragments/Navbar";
 import React, { useState } from "react";
 import Monyet2 from "../assets/monyet2.png";
 import ModalVote from "../components/Fragments/ModalVote";
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 const Vote = () => {
   const [openVote, setOpenVote] = useState(false);
@@ -52,49 +54,51 @@ const Vote = () => {
 
             <div className="flex flex-col gap-[30px]">
               <div className="bg-chart1 w-[657px] h-[146px] rounded-[15px] flex justify-center items-center gap-[30px] px-[30px]">
-                <div className="bg-colorpaslon3 w-[80px] h-[112px] rounded-[10px] p-[10px] text-center">
+                <div className="bg-colorpaslon3 w-[80px] h-[112px] rounded-[10px] p-[10px] text-center border-white border-[2px]">
                   <p className="text-[16px] font-[700] text-white">No.</p>
                   <p className="text-[16px] font-[700] text-white">Paslon</p>
                   <p className="text-[32px] font-[700] text-white">3</p>
                 </div>
 
                 <div>
-                  <p className="text-colorpaslon3 text-[40px] font-[900]">
+                  <p className="text-colorpaslon3 text-[40px] font-[900] text-outline">
                     CINTARA SURYA PALOH
                   </p>
-                  <p className="text-[36px] font-[700] text-colorpaslon3">
+                  <p className="text-[36px] font-[700] text-colorpaslon3 text-outline">
                     78%
                   </p>
                 </div>
               </div>
 
               <div className="bg-chart2 w-[657px] h-[146px] rounded-[15px] flex items-center gap-[30px] px-[30px]">
-                <div className="bg-login w-[80px] h-[112px] rounded-[10px] p-[10px] text-center">
+                <div className="bg-login w-[80px] h-[112px] rounded-[10px] p-[10px] text-center border-white border-[2px]">
                   <p className="text-[16px] font-[700] text-white">No.</p>
                   <p className="text-[16px] font-[700] text-white">Paslon</p>
                   <p className="text-[32px] font-[700] text-white">1</p>
                 </div>
 
                 <div>
-                  <p className="text-login text-[40px] font-[900]">
+                  <p className="text-login text-[40px] font-[900] text-outline">
                     SURYA SURYA
                   </p>
-                  <p className="text-[36px] font-[700] text-login">45%</p>
+                  <p className="text-[36px] font-[700] text-login text-outline">
+                    45%
+                  </p>
                 </div>
               </div>
 
               <div className="bg-chart3 w-[657px] h-[146px] rounded-[15px] flex items-center gap-[30px] px-[30px]">
-                <div className="bg-colorpaslon1 w-[80px] h-[112px] rounded-[10px] p-[10px] text-center">
+                <div className="bg-colorpaslon1 w-[80px] h-[112px] rounded-[10px] p-[10px] text-center border-white border-[2px]">
                   <p className="text-[16px] font-[700] text-white">No.</p>
                   <p className="text-[16px] font-[700] text-white">Paslon</p>
                   <p className="text-[32px] font-[700] text-white">2</p>
                 </div>
 
                 <div>
-                  <p className="text-colorpaslon1 text-[40px] font-[900]">
+                  <p className="text-colorpaslon1 text-[40px] font-[900] text-outline">
                     CINTARA
                   </p>
-                  <p className="text-[36px] font-[700] text-colorpaslon1">
+                  <p className="text-[36px] font-[700] text-colorpaslon1 text-outline">
                     25%
                   </p>
                 </div>
@@ -102,16 +106,9 @@ const Vote = () => {
             </div>
           </div>
           <div className="pl-[170px] mb-[50px]">
-            {/* <button
-              onClick={() => setOpenVote(true)}
-              className="rounded-[10px] bg-login px-[20px] py-[5px] text-white font-bold text-[32px]"
-            >
-              Masukan Suaramu
-            </button> */}
-
             {pilih === false ? (
               <button
-                className="rounded-[10px] bg-login px-[20px] py-[5px] text-white font-bold text-[32px]"
+                className="rounded-[10px] bg-login px-[20px] py-[5px] text-white font-bold text-[32px] hover:bg-white  hover:text-login border-2 border-login transition-all"
                 onClick={() => setOpenVote(true)}
               >
                 MASUKKAN SUARAMU
@@ -227,13 +224,13 @@ const Vote = () => {
 
               <div className="flex w-full justify-center items-center gap-[30px] mb-[10px] mt-[20px]">
                 <Button
-                  lgnBtn="w-[400px] bg-white border-2 border-login hover:bg-login hover:text-white  text-login text-[20px] font-[700] px-8 py-1 rounded-[10px]"
+                  lgnBtn="w-[400px] bg-white border-2 border-login hover:bg-login hover:text-white  text-login text-[20px] font-[700] px-8 py-1 rounded-[10px] transition-all"
                   text="RESET"
                 />
 
                 <button
                   onClick={voting}
-                  className="w-[400px] bg-login hover:bg-white  hover:text-login border-2 border-login text-white text-[20px] font-[700] px-8 py-1 rounded-[10px]"
+                  className="w-[400px] bg-login hover:bg-white  hover:text-login border-2 border-login text-white text-[20px] font-[700] px-8 py-1 rounded-[10px] transition-all"
                 >
                   SUBMIT
                 </button>
@@ -244,12 +241,14 @@ const Vote = () => {
 
         <div className="bg-body w-full flex items-center justify-center relative">
           <div className="mt-[50px] mb-[80px] ">
-            <button className="rounded-full bg-white text-black font-bold px-3 py-1 absolute top-[55%] left-[100px]">
-              &#11164;
+            <button className="rounded-full bg-white text-black font-bold px-3 py-3 absolute top-[55%] left-[100px]">
+              {/* &#11164; */}
+              <FaAngleLeft size="30px" />
             </button>
 
-            <button className="rounded-full bg-white text-black font-bold px-3 py-1 absolute top-[55%] right-[100px]">
-              &#11166;
+            <button className="rounded-full bg-white text-black font-bold px-3 py-3 absolute top-[55%] right-[100px]">
+              {/* &#11166; */}
+              <FaAngleRight size="30px" />
             </button>
 
             <p className="text-login text-[48px] font-[900] text-center mb-[50px]">
