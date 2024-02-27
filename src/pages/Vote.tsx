@@ -5,9 +5,9 @@ import Profil from "../assets/monyet.png";
 import Navbar from "../components/Fragments/Navbar";
 import React, { useState } from "react";
 import Monyet2 from "../assets/monyet2.png";
-import ModalVote from "../components/Fragments/ModalVote";
 import { FaAngleLeft } from "react-icons/fa6";
 import { FaAngleRight } from "react-icons/fa6";
+import Modal from "../components/Fragments/Modal";
 
 const Vote = () => {
   const [openVote, setOpenVote] = useState(false);
@@ -119,7 +119,7 @@ const Vote = () => {
               </p>
             )}
           </div>
-          <ModalVote open={openVote} onClose={() => setOpenVote(false)}>
+          <Modal open={openVote} onClose={() => setOpenVote(false)}>
             <div className=" flex items-center justify-center flex-col">
               <div className="w-[1000px] bg-white mt-[10px] px-[20px] pb-[10px] rounded-[20px] ">
                 <h1 className="text-[32px] font-[700] text-login text-center">
@@ -236,7 +236,7 @@ const Vote = () => {
                 </button>
               </div>
             </div>
-          </ModalVote>
+          </Modal>
         </main>
 
         <div className="bg-body w-full flex items-center justify-center relative">

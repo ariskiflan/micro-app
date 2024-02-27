@@ -4,8 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Label from "../Elements/Input/Label";
 import Input from "../Elements/Input/Input";
-import ModalLogin from "./ModalLogin";
-import ModalRegister from "./ModalRegister";
+import Modal from "./Modal";
 
 type Props = {
   textNav: string;
@@ -77,7 +76,7 @@ const Navbar = (props: Props) => {
             </div>
           )}
 
-          <ModalLogin open={openLogin} onClose={() => setOpenLogin(false)}>
+          <Modal open={openLogin} onClose={() => setOpenLogin(false)}>
             <div className=" flex items-center justify-center flex-col">
               <div className="w-[350px] bg-white mt-[20px] px-[30px] py-[20px] rounded-[20px] ">
                 <h1 className="text-[32px] font-[900] text-login text-center mb-[15px]">
@@ -126,12 +125,9 @@ const Navbar = (props: Props) => {
                 </p>
               </div>
             </div>
-          </ModalLogin>
+          </Modal>
 
-          <ModalRegister
-            registerOpen={openRegister}
-            onClose={() => setOpenRegister(false)}
-          >
+          <Modal open={openRegister} onClose={() => setOpenRegister(false)}>
             <div className=" flex items-center justify-center flex-col">
               <div className="w-[350px] bg-white mt-[10px] px-[30px] py-[20px] rounded-[20px] ">
                 <h1 className="text-[32px] font-[900] text-login text-center mb-[15px]">
@@ -214,7 +210,7 @@ const Navbar = (props: Props) => {
                 </p>
               </div>
             </div>
-          </ModalRegister>
+          </Modal>
         </div>
       </nav>
     </header>

@@ -6,7 +6,7 @@ type PropsType = {
   children: React.ReactNode;
 };
 
-const ModalLogin: React.FC<PropsType> = ({ open, onClose, children }) => {
+const Modal: React.FC<PropsType> = ({ open, onClose, children }) => {
   return (
     // backdrop
     <div
@@ -35,4 +35,4 @@ const ModalLogin: React.FC<PropsType> = ({ open, onClose, children }) => {
     </div>
   );
 };
-export default ModalLogin;
+export default Modal;
