@@ -2,6 +2,7 @@ import Navbar from "../components/Fragments/Navbar";
 import Headline from "../assets/sample-kpu.png";
 import Footer from "../components/Fragments/Footer";
 import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const DetailPage = () => {
   const dummy = [
@@ -50,7 +51,10 @@ const DetailPage = () => {
         <main className="flex items-center justify-center flex-col">
           <div className="w-[1140px] px-[100px] bg-white flex flex-col items-center justify-center pt-[15px] relative">
             <div className="absolute left-[100px] top-[15px] flex items-center justify-center gap-[10px]">
-              <FaArrowLeft size="20px" />
+              <Link to="/">
+                <FaArrowLeft size="20px" />
+              </Link>
+
               <p className="text-[20px] font-[400]  ">Beranda</p>
             </div>
 
