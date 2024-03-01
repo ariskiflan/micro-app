@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import Modal from "./Modal";
-import Login from "./Login";
 import Register from "./Register";
+import Login from "./Login";
 
 type Props = {
   textNav: string;

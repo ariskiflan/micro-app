@@ -23,7 +23,7 @@ const Login = (props: Props) => {
                 <Input
                   placeholder="example@mail.com"
                   type="text"
-                  name="text"
+                  name="username"
                   id="username"
                 />
               </div>

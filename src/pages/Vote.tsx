@@ -1,13 +1,13 @@
-import Chart from "../assets/chart.png";
 import Button from "../components/Elements/Button/Button";
 import Footer from "../components/Fragments/Footer";
 import Profil from "../assets/monyet.png";
 import Navbar from "../components/Fragments/Navbar";
 import React, { useState } from "react";
 import Monyet2 from "../assets/monyet2.png";
-import { FaAngleLeft } from "react-icons/fa6";
-import { FaAngleRight } from "react-icons/fa6";
 import Modal from "../components/Fragments/Modal";
+
+import { Carousel } from "flowbite-react";
+import Chart from "../components/Fragments/Chart";
 
 const Vote = () => {
   const [openVote, setOpenVote] = useState(false);
@@ -33,6 +33,51 @@ const Vote = () => {
     },
   ];
 
+  const dataCarousel = [
+    {
+      noUrut: "1",
+      namaPaslon: "CINTARA SURYA PALOH",
+      visiMisi: [
+        "Memindahkan Indonesia ke Isekai.",
+        "Nonton anime 3x sehari.",
+        "Melakukan peresapan pada budaya jepang.",
+      ],
+      koalisi: [
+        "Partai Persatuan Wiboo.",
+        "Partai Redbull.",
+        "Partai Black Magic.",
+      ],
+    },
+    {
+      noUrut: "2",
+      namaPaslon: "CINTARA SURYA ",
+      visiMisi: [
+        "Mencari 7 Dragonball.",
+        "Menamatkan Onepiece 1 Hari.",
+        "Membunuh para Iblis",
+      ],
+      koalisi: [
+        "Partai Pengepul Indonesia.",
+        "Partai Banteng merah.",
+        "Partai Black CLover.",
+      ],
+    },
+    {
+      noUrut: "3",
+      namaPaslon: "CINTARA ",
+      visiMisi: [
+        "Memenangkan Turnamnent Antar Semesta",
+        "Mengambil buah kuldi",
+        "Hidup Seperti Larry",
+      ],
+      koalisi: [
+        "Partai Panjat Sosial.",
+        "Partai Burung dara.",
+        "Partai Senggol bacok.",
+      ],
+    },
+  ];
+
   return (
     <div>
       <body className="bg-white">
@@ -43,13 +88,10 @@ const Vote = () => {
             INFO PEMILU TERUPDATE
           </h1>
           <div className="flex justify-center items-center gap-[50px] w-full bg-white pt-[15px] mt-[50px] mb-[50px]">
-            <div className="flex flex-col items-center justify-center gap-[30px]">
+            <div className="flex flex-col items-center justify-center gap-[30px] w-[375px]">
               <p className="text-[40px] text-black font-[900]">Hasil :</p>
-              <img
-                className="w-[377px] h-[368px]"
-                src={Chart}
-                alt="Chart Image"
-              />
+
+              <Chart />
             </div>
 
             <div className="flex flex-col gap-[30px]">
@@ -240,48 +282,43 @@ const Vote = () => {
         </main>
 
         <div className="bg-body w-full flex items-center justify-center relative">
-          <div className="mt-[50px] mb-[80px] ">
-            <button className="rounded-full bg-white text-black font-bold px-3 py-3 absolute top-[55%] left-[100px]">
-              {/* &#11164; */}
-              <FaAngleLeft size="30px" />
-            </button>
-
-            <button className="rounded-full bg-white text-black font-bold px-3 py-3 absolute top-[55%] right-[100px]">
-              {/* &#11166; */}
-              <FaAngleRight size="30px" />
-            </button>
-
-            <p className="text-login text-[48px] font-[900] text-center mb-[50px]">
+          <div className="mt-[50px] mb-[80px] h-[600px] w-[1140px] bg-body ">
+            <p className="text-login text-[48px] font-[900] text-center ">
               INFO PASLON
             </p>
-            <div className="flex justify-center items-center shadow-xl shadow-neutral-500 ">
-              <div className="bg-white w-[947px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px]">
-                <div>
-                  <img
-                    className="w-[246px] h-[328px]"
-                    src={Profil}
-                    alt="Profil"
-                  />
-                </div>
 
-                <div>
-                  <p className="text-[24px] font-[700]">Nomor Urut: 1</p>
-                  <p className="text-[40px] font-[700]">CINTARA SURYA PALOH</p>
-                  <p className="text-[24px] font-[400]">Visi & Misi:</p>
-                  <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                    <li>Memindahkan Indonesia ke Isekai.</li>
-                    <li>Nonton anime 3x sehari.</li>
-                    <li>Melakukan peresapan pada budaya jepang.</li>
-                  </ul>
-                  <p className="text-[24px] font-[400]">Koalisi:</p>
-                  <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                    <li>Partai Persatuan Wiboo.</li>
-                    <li>Partai Redbull.</li>
-                    <li>Partai Black Magic.</li>
-                  </ul>
+            <Carousel className="px-[97px]" slide={false} indicators={false}>
+              {dataCarousel.map((item, index) => (
+                <div className="bg-white w-[947px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px]">
+                  <div>
+                    <img
+                      className="w-[246px] h-[328px]"
+                      src={Profil}
+                      alt="Profil"
+                    />
+                  </div>
+
+                  <div key={index}>
+                    <p className="text-[24px] font-[700]">
+                      Nomor Urut: {item.noUrut}
+                    </p>
+                    <p className="text-[40px] font-[700]">{item.namaPaslon}</p>
+                    <p className="text-[24px] font-[400]">Visi & Misi:</p>
+                    <ul className="text-[24px] font-[400] list-disc ps-[40px]">
+                      <li>{item.visiMisi[0]}</li>
+                      <li>{item.visiMisi[1]}</li>
+                      <li>{item.visiMisi[2]}</li>
+                    </ul>
+                    <p className="text-[24px] font-[400]">Koalisi:</p>
+                    <ul className="text-[24px] font-[400] list-disc ps-[40px]">
+                      <li>{item.koalisi[0]}</li>
+                      <li>{item.koalisi[1]}</li>
+                      <li>{item.koalisi[2]}</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </div>
+              ))}
+            </Carousel>
           </div>
         </div>
 
