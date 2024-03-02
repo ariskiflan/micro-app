@@ -241,39 +241,6 @@ const Vote = () => {
             </p>
 
             <Carousel />
-
-            {/* <Carousel className="px-[97px]" slide={false} indicators={false}>
-              {dataCarousel.map((item, index) => (
-                <div className="bg-white w-[947px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px]">
-                  <div>
-                    <img
-                      className="w-[246px] h-[328px]"
-                      src={Profil}
-                      alt="Profil"
-                    />
-                  </div>
-
-                  <div key={index}>
-                    <p className="text-[24px] font-[700]">
-                      Nomor Urut: {item.noUrut}
-                    </p>
-                    <p className="text-[40px] font-[700]">{item.namaPaslon}</p>
-                    <p className="text-[24px] font-[400]">Visi & Misi:</p>
-                    <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                      <li>{item.visiMisi[0]}</li>
-                      <li>{item.visiMisi[1]}</li>
-                      <li>{item.visiMisi[2]}</li>
-                    </ul>
-                    <p className="text-[24px] font-[400]">Koalisi:</p>
-                    <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                      <li>{item.koalisi[0]}</li>
-                      <li>{item.koalisi[1]}</li>
-                      <li>{item.koalisi[2]}</li>
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </Carousel> */}
           </div>
         </div>
 
