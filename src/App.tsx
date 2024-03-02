@@ -8,12 +8,14 @@ import ListPaslon from "./pages/ListPaslon";
 import AddPaslon from "./pages/AddPaslon";
 import ListPartai from "./pages/ListPartai";
 import AddPartai from "./pages/AddPartai";
+import Carousel from "./components/Fragments/Carousel";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/carousel" Component={Carousel} />
           <Route path="/" Component={LandingPage} />
           <Route path="/vote" Component={Vote} />
           <Route path="/detail" Component={DetailPage} />

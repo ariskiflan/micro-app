@@ -9,11 +9,11 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   const nameList = [
     {
-      linkTo: "/addpartai",
+      linkTo: "/listpartai",
       list: "Partai",
     },
     {
-      linkTo: "/addpaslon",
+      linkTo: "/listpaslon",
       list: "Paslon",
     },
     {

@@ -1,13 +1,11 @@
 import Button from "../components/Elements/Button/Button";
 import Footer from "../components/Fragments/Footer";
-import Profil from "../assets/monyet.png";
 import Navbar from "../components/Fragments/Navbar";
 import React, { useState } from "react";
 import Monyet2 from "../assets/monyet2.png";
 import Modal from "../components/Fragments/Modal";
-
-import { Carousel } from "flowbite-react";
 import Chart from "../components/Fragments/Chart";
+import Carousel from "../components/Fragments/Carousel";
 
 const Vote = () => {
   const [openVote, setOpenVote] = useState(false);
@@ -20,61 +18,16 @@ const Vote = () => {
 
   const nameList = [
     {
-      linkTo: "/addpartai",
+      linkTo: "/listpartai",
       list: "Partai",
     },
     {
-      linkTo: "/addpaslon",
+      linkTo: "/listpaslon",
       list: "Paslon",
     },
     {
       linkTo: "/vote",
       list: "Voting",
-    },
-  ];
-
-  const dataCarousel = [
-    {
-      noUrut: "1",
-      namaPaslon: "CINTARA SURYA PALOH",
-      visiMisi: [
-        "Memindahkan Indonesia ke Isekai.",
-        "Nonton anime 3x sehari.",
-        "Melakukan peresapan pada budaya jepang.",
-      ],
-      koalisi: [
-        "Partai Persatuan Wiboo.",
-        "Partai Redbull.",
-        "Partai Black Magic.",
-      ],
-    },
-    {
-      noUrut: "2",
-      namaPaslon: "CINTARA SURYA ",
-      visiMisi: [
-        "Mencari 7 Dragonball.",
-        "Menamatkan Onepiece 1 Hari.",
-        "Membunuh para Iblis",
-      ],
-      koalisi: [
-        "Partai Pengepul Indonesia.",
-        "Partai Banteng merah.",
-        "Partai Black CLover.",
-      ],
-    },
-    {
-      noUrut: "3",
-      namaPaslon: "CINTARA ",
-      visiMisi: [
-        "Memenangkan Turnamnent Antar Semesta",
-        "Mengambil buah kuldi",
-        "Hidup Seperti Larry",
-      ],
-      koalisi: [
-        "Partai Panjat Sosial.",
-        "Partai Burung dara.",
-        "Partai Senggol bacok.",
-      ],
     },
   ];
 
@@ -281,13 +234,15 @@ const Vote = () => {
           </Modal>
         </main>
 
-        <div className="bg-body w-full flex items-center justify-center relative">
-          <div className="mt-[50px] mb-[80px] h-[600px] w-[1140px] bg-body ">
+        <div className="bg-body w-full flex items-center justify-center ">
+          <div className="mt-[50px] mb-[80px] h-[600px] w-[1140px] bg-body">
             <p className="text-login text-[48px] font-[900] text-center ">
               INFO PASLON
             </p>
 
-            <Carousel className="px-[97px]" slide={false} indicators={false}>
+            <Carousel />
+
+            {/* <Carousel className="px-[97px]" slide={false} indicators={false}>
               {dataCarousel.map((item, index) => (
                 <div className="bg-white w-[947px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px]">
                   <div>
@@ -318,7 +273,7 @@ const Vote = () => {
                   </div>
                 </div>
               ))}
-            </Carousel>
+            </Carousel> */}
           </div>
         </div>
 
