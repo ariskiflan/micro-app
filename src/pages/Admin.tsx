@@ -35,11 +35,11 @@ const Admin = () => {
 
   const nameList = [
     {
-      linkTo: "/addpartai",
+      linkTo: "/listpartai",
       list: "Partai",
     },
     {
-      linkTo: "/addpaslon",
+      linkTo: "/listpaslon",
       list: "Paslon",
     },
   ];

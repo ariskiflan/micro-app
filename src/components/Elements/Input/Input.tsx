@@ -3,13 +3,15 @@ type Props = {
   type: string;
   name: string;
   id: string;
+  onchange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Input = (props: Props) => {
-  const { placeholder, type, name, id } = props;
+  const { placeholder, type, name, id, onchange } = props;
   return (
     <div>
       <input
+        onChange={onchange}
         id={id}
         type={type}
         name={name}

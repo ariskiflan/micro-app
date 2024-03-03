@@ -4,10 +4,12 @@ import Label from "../Elements/Input/Label";
 type Props = {
   onclick: (e: React.MouseEvent<HTMLElement>) => void;
   onClickRegist: () => void;
+  getInputValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Login = (props: Props) => {
-  const { onclick, onClickRegist } = props;
+  const { onclick, onClickRegist, getInputValue } = props;
+
   return (
     <div>
       <div className=" flex items-center justify-center flex-col">
@@ -21,6 +23,7 @@ const Login = (props: Props) => {
               <div>
                 <Label text="Username" htmlfor="username" />
                 <Input
+                  onchange={getInputValue}
                   placeholder="example@mail.com"
                   type="text"
                   name="username"
@@ -31,6 +34,7 @@ const Login = (props: Props) => {
               <div>
                 <Label text="Password" htmlfor="password" />
                 <Input
+                  onchange={getInputValue}
                   placeholder="*********"
                   type="password"
                   name="password"

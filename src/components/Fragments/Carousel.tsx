@@ -56,45 +56,45 @@ const sliderSettings = {
 
 const Carousel = () => {
   return (
-    <div className="bg-body w-full flex justify-center items-center h-[600px] relative">
-      <Swiper {...sliderSettings}>
-        <SliderButton />
-        {dataCarousel.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex justify-center items-center h-[600px]">
-              <div className="bg-white w-[900px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px] shadow-xl shadow-neutral-400">
-                <div>
-                  <img
-                    className="w-[246px] h-[328px]"
-                    src={Profil}
-                    alt="Profil"
-                  />
-                </div>
+    // <div className="bg-body w-full flex justify-center items-center h-[600px] relative">
+    <Swiper {...sliderSettings}>
+      <SliderButton />
+      {dataCarousel.map((item, index) => (
+        <SwiperSlide key={index}>
+          <div className="flex justify-center items-center h-[600px]">
+            <div className="bg-white w-[900px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px] shadow-xl shadow-neutral-400">
+              <div>
+                <img
+                  className="w-[246px] h-[328px]"
+                  src={Profil}
+                  alt="Profil"
+                />
+              </div>
 
-                <div>
-                  <p className="text-[24px] font-[700]">
-                    Nomor Urut: {item.noUrut}
-                  </p>
-                  <p className="text-[40px] font-[700]">{item.namaPaslon}</p>
-                  <p className="text-[24px] font-[400]">Visi & Misi:</p>
-                  <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                    <li>{item.visiMisi[0]}</li>
-                    <li>{item.visiMisi[1]}</li>
-                    <li>{item.visiMisi[2]}</li>
-                  </ul>
-                  <p className="text-[24px] font-[400]">Koalisi:</p>
-                  <ul className="text-[24px] font-[400] list-disc ps-[40px]">
-                    <li>{item.koalisi[0]}</li>
-                    <li>{item.koalisi[1]}</li>
-                    <li>{item.koalisi[2]}</li>
-                  </ul>
-                </div>
+              <div>
+                <p className="text-[24px] font-[700]">
+                  Nomor Urut: {item.noUrut}
+                </p>
+                <p className="text-[40px] font-[700]">{item.namaPaslon}</p>
+                <p className="text-[24px] font-[400]">Visi & Misi:</p>
+                <ul className="text-[24px] font-[400] list-disc ps-[40px]">
+                  <li>{item.visiMisi[0]}</li>
+                  <li>{item.visiMisi[1]}</li>
+                  <li>{item.visiMisi[2]}</li>
+                </ul>
+                <p className="text-[24px] font-[400]">Koalisi:</p>
+                <ul className="text-[24px] font-[400] list-disc ps-[40px]">
+                  <li>{item.koalisi[0]}</li>
+                  <li>{item.koalisi[1]}</li>
+                  <li>{item.koalisi[2]}</li>
+                </ul>
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    // </div>
   );
 };
 
