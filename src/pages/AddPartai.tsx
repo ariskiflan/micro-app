@@ -3,21 +3,12 @@ import Label from "../components/Elements/Input/Label";
 import Input from "../components/Elements/Input/Input";
 import Button from "../components/Elements/Button/Button";
 import Navbar from "../components/Fragments/Navbar";
+import DataListAdmin from "../data/dataListAdmin.json";
 
 const AddPartai = () => {
-  const nameList = [
-    {
-      linkTo: "/addpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/addpaslon",
-      list: "Paslon",
-    },
-  ];
   return (
     <div>
-      <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
+      <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={DataListAdmin} />
 
       <main className="flex items-center justify-center flex-col">
         <h1 className="text-[48px] font-[700] mt-[50px] text-login">
@@ -36,17 +27,29 @@ const AddPartai = () => {
             <form action="">
               <div className="flex flex-col gap-[20px] mb-[50px] ">
                 <div>
-                  <Label text="Nama" />
-                  <Input placeholder="Malik" type="text" name="text" />
+                  <Label text="Nama" htmlfor="nama" />
+                  <Input
+                    placeholder="Malik"
+                    type="text"
+                    name="text"
+                    id="nama"
+                    onchange={() => {}}
+                  />
                 </div>
 
                 <div>
-                  <Label text="Ketua Umum" />
-                  <Input placeholder="01" type="text" name="text" />
+                  <Label text="Ketua Umum" htmlfor="ketum" />
+                  <Input
+                    placeholder="01"
+                    type="text"
+                    name="text"
+                    id="ketum"
+                    onchange={() => {}}
+                  />
                 </div>
 
                 <div>
-                  <Label text="Visi Misi" />
+                  <Label text="Visi Misi" htmlfor="visimisi" />
                   <textarea
                     className="border-solid border-[2px] h-[120px] border-black rounded-[10px] text-[20px] w-full px-[10px] py-[10px] placeholder: opacity-50"
                     name=""
@@ -56,7 +59,7 @@ const AddPartai = () => {
                 </div>
 
                 <div>
-                  <Label text="Alamat" />
+                  <Label text="Alamat" htmlfor="alamat" />
                   <textarea
                     className="border-solid border-[2px] h-[120px] border-black rounded-[10px] text-[20px] w-full px-[10px] py-[10px] placeholder: opacity-50"
                     name=""

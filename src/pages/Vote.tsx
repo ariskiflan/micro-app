@@ -6,6 +6,8 @@ import Monyet2 from "../assets/monyet2.png";
 import Modal from "../components/Fragments/Modal";
 import Chart from "../components/Fragments/Chart";
 import Carousel from "../components/Fragments/Carousel";
+import DataVotePaslon from "../data/dataVotePaslon.json";
+import DataListUser from "../data/dataListUser.json";
 
 const Vote = () => {
   const [openVote, setOpenVote] = useState(false);
@@ -16,25 +18,10 @@ const Vote = () => {
     setOpenVote(false);
   };
 
-  const nameList = [
-    {
-      linkTo: "/listpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/listpaslon",
-      list: "Paslon",
-    },
-    {
-      linkTo: "/vote",
-      list: "Voting",
-    },
-  ];
-
   return (
     <div>
       <body className="bg-white">
-        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
+        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={DataListUser} />
 
         <main className="flex items-center justify-center flex-col">
           <h1 className="text-[48px] font-[700] mt-[50px] text-login">
@@ -122,7 +109,39 @@ const Vote = () => {
                 </h1>
 
                 <div className="grid grid-cols-3 gap-[20px] mt-[20px]">
-                  <div className="col-span-1 relative">
+                  {DataVotePaslon.map((item, index) => (
+                    <div key={index} className="col-span-1 relative">
+                      <div className="absolute top-0 right-0 flex items-center justify-center w-[70px] h-[70px] mx-auto mb-10 bg-dashboard1 border-8 border-login rounded-full text-center text-login text-[30px] font-bold">
+                        {item.noUrut}
+                      </div>
+                      <div className="bg-thead hover:bg-dashboard1 duration-300 rounded-xl p-6">
+                        <div className="mb-2">
+                          <img
+                            src={Monyet2}
+                            className="w-full h-[200px] rounded-xl"
+                            alt=""
+                          />
+                        </div>
+                        <div className="">
+                          <p className="font-[900] text-[20px] text-login">
+                            {item.namaPaslon}
+                          </p>
+                          <p className="text-[14px] font-[500]">
+                            {item.visiMisi}
+                          </p>
+                          <p className="text-[14px] font-[700]">
+                            Partai Pengusung:
+                          </p>
+                          <ul className="text-[14px] font-[400] list-disc ps-[40px]">
+                            <li>{item.koalisi[0]}</li>
+                            <li>{item.koalisi[1]}</li>
+                            <li>{item.koalisi[2]}</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {/* <div className="col-span-1 relative">
                     <div className="absolute top-0 right-0 flex items-center justify-center w-[70px] h-[70px] mx-auto mb-10 bg-dashboard1 border-8 border-login rounded-full text-center text-login text-[30px] font-bold">
                       1
                     </div>
@@ -151,69 +170,7 @@ const Vote = () => {
                         </ul>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="col-span-1 relative">
-                    <div className="absolute top-0 right-0 flex items-center justify-center w-[70px] h-[70px] mx-auto mb-10 bg-dashboard2  border-8 border-nopas2 rounded-full text-center text-nopas2 text-[30px] font-bold">
-                      2
-                    </div>
-                    <div className="bg-dashboard2 rounded-xl p-6">
-                      <div className="mb-2">
-                        <img
-                          src={Monyet2}
-                          className="w-full h-[200px] rounded-xl"
-                          alt=""
-                        />
-                      </div>
-                      <div className="">
-                        <p className="font-[900] text-[20px] text-nopas2">
-                          MALIK
-                        </p>
-                        <p className="text-[14px] font-[500]">
-                          Memindahkan manusia ke isekai
-                        </p>
-                        <p className="text-[14px] font-[700]">
-                          Partai Pengusung:
-                        </p>
-                        <ul className="text-[14px] font-[400] list-disc ps-[40px]">
-                          <li>Partai Persatuan Wiboo.</li>
-                          <li>Partai Redbull.</li>
-                          <li>Partai Black Magic.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="col-span-1 relative ">
-                    <div className="absolute top-0 right-0 flex items-center justify-center w-[70px] h-[70px] mx-auto mb-10 bg-dashboard3 border-8 border-colorpaslon3 rounded-full text-center text-colorpaslon3  text-[30px] font-bold">
-                      3
-                    </div>
-                    <div className="bg-dashboard3 rounded-xl p-6">
-                      <div className="mb-2">
-                        <img
-                          src={Monyet2}
-                          className="w-full h-[200px] rounded-xl"
-                          alt=""
-                        />
-                      </div>
-                      <div className="">
-                        <p className="font-[900] text-[20px] text-colorpaslon3">
-                          MALIK
-                        </p>
-                        <p className="text-[14px] font-[500]">
-                          Memindahkan manusia ke isekai
-                        </p>
-                        <p className="text-[14px] font-[700]">
-                          Partai Pengusung:
-                        </p>
-                        <ul className="text-[14px] font-[400] list-disc ps-[40px]">
-                          <li>Partai Persatuan Wiboo.</li>
-                          <li>Partai Redbull.</li>
-                          <li>Partai Black Magic.</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

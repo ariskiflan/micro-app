@@ -2,24 +2,13 @@ import MonyetImg from "../assets/monyet.png";
 import Label from "../components/Elements/Input/Label";
 import Input from "../components/Elements/Input/Input";
 import Button from "../components/Elements/Button/Button";
-
+import DataListAdmin from "../data/dataListAdmin.json";
 import Navbar from "../components/Fragments/Navbar";
 
 const AddPaslon = () => {
-  const nameList = [
-    {
-      linkTo: "/addpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/addpaslon",
-      list: "Paslon",
-    },
-  ];
-
   return (
     <div>
-      <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
+      <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={DataListAdmin} />
 
       <main className="flex items-center justify-center flex-col">
         <h1 className="text-[48px] font-[700] mt-[50px] text-login">
@@ -38,17 +27,29 @@ const AddPaslon = () => {
             <form action="">
               <div className="flex flex-col gap-[20px] mb-[50px] ">
                 <div>
-                  <Label text="Nama" />
-                  <Input placeholder="Malik" type="text" name="text" />
+                  <Label text="Nama" htmlfor="text" />
+                  <Input
+                    placeholder="Malik"
+                    type="text"
+                    name="text"
+                    id="text"
+                    onchange={() => {}}
+                  />
                 </div>
 
                 <div>
-                  <Label text="Nomor Urut" />
-                  <Input placeholder="01" type="text" name="text" />
+                  <Label text="Nomor Urut" htmlfor="nourut" />
+                  <Input
+                    placeholder="01"
+                    type="text"
+                    name="text"
+                    id="nourut"
+                    onchange={() => {}}
+                  />
                 </div>
 
                 <div>
-                  <Label text="Visi Misi" />
+                  <Label text="Visi Misi" htmlfor="visimisi" />
                   <textarea
                     className="border-solid border-[2px] h-[150px] border-black rounded-[10px] text-[20px] w-full px-[10px] py-[10px] placeholder: opacity-50"
                     name=""

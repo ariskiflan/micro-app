@@ -1,13 +1,8 @@
 import Input from "../Elements/Input/Input";
 import Label from "../Elements/Input/Label";
+import { InterfaceLogin } from "../../interfaces/interfaceLogin";
 
-type Props = {
-  onclick: (e: React.MouseEvent<HTMLElement>) => void;
-  onClickRegist: () => void;
-  getInputValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
-
-const Login = (props: Props) => {
+const Login = (props: InterfaceLogin) => {
   const { onclick, onClickRegist, getInputValue } = props;
 
   return (

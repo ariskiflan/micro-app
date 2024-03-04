@@ -1,11 +1,7 @@
 import LogoImage from "../../../assets/logo.png";
+import { InterfaceLogo } from "../../../interfaces/interfaceLogo";
 
-type Props = {
-  width: string;
-  height: string;
-};
-
-const Logo = (props: Props) => {
+const Logo = (props: InterfaceLogo) => {
   const { width, height } = props;
   return (
     <img className={`${width} ${height}`} src={LogoImage} alt="Logo Dumbways" />

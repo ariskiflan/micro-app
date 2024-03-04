@@ -1,12 +1,6 @@
-type Props = {
-  placeholder: string;
-  type: string;
-  name: string;
-  id: string;
-  onchange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+import { InterfaceInput } from "../../../interfaces/interfaceInput";
 
-const Input = (props: Props) => {
+const Input = (props: InterfaceInput) => {
   const { placeholder, type, name, id, onchange } = props;
   return (
     <div>

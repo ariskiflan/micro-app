@@ -1,0 +1,30 @@
+[
+  {
+    "no": "1",
+    "name": "Sugeng No Pants",
+    "addres": "Cileungsi",
+    "gender": "Laki-Laki",
+    "paslon": "Paloh"
+  },
+  {
+    "no": "2",
+    "name": "Haris Gams",
+    "addres": "Serang",
+    "gender": "Perempuan",
+    "paslon": "Surya"
+  },
+  {
+    "no": "3",
+    "name": "Aziz Union",
+    "addres": "Bekasi",
+    "gender": "Laki-Laki",
+    "paslon": "Cintara"
+  },
+  {
+    "no": "4",
+    "name": "Lae Tanjung Balai",
+    "addres": "Tanjung Balai",
+    "gender": "Laki-Laki",
+    "paslon": "Paloh"
+  }
+]

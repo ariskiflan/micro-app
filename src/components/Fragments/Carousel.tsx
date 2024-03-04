@@ -3,51 +3,7 @@ import "swiper/css";
 import "../../index.css";
 import Profil from "../../assets/monyet.png";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-
-const dataCarousel = [
-  {
-    noUrut: "1",
-    namaPaslon: "CINTARA SURYA PALOH",
-    visiMisi: [
-      "Memindahkan Indonesia ke Isekai.",
-      "Nonton anime 3x sehari.",
-      "Melakukan peresapan pada budaya jepang.",
-    ],
-    koalisi: [
-      "Partai Persatuan Wiboo.",
-      "Partai Redbull.",
-      "Partai Black Magic.",
-    ],
-  },
-  {
-    noUrut: "2",
-    namaPaslon: "CINTARA SURYA ",
-    visiMisi: [
-      "Mencari 7 Dragonball.",
-      "Menamatkan Onepiece 1 Hari.",
-      "Membunuh para Iblis",
-    ],
-    koalisi: [
-      "Partai Pengepul Indonesia.",
-      "Partai Banteng merah.",
-      "Partai Black CLover.",
-    ],
-  },
-  {
-    noUrut: "3",
-    namaPaslon: "CINTARA ",
-    visiMisi: [
-      "Memenangkan Turnamnent Antar Semesta",
-      "Mengambil buah kuldi",
-      "Hidup Seperti Larry",
-    ],
-    koalisi: [
-      "Partai Panjat Sosial.",
-      "Partai Burung dara.",
-      "Partai Senggol bacok.",
-    ],
-  },
-];
+import DataCarouselPaslon from "../../data/dataCarouselPaslon.json";
 
 const sliderSettings = {
   spaceBetween: 50,
@@ -56,10 +12,9 @@ const sliderSettings = {
 
 const Carousel = () => {
   return (
-    // <div className="bg-body w-full flex justify-center items-center h-[600px] relative">
     <Swiper {...sliderSettings}>
       <SliderButton />
-      {dataCarousel.map((item, index) => (
+      {DataCarouselPaslon.map((item, index) => (
         <SwiperSlide key={index}>
           <div className="flex justify-center items-center h-[600px]">
             <div className="bg-white w-[900px] h-[494px] flex justify-center items-center gap-[30px] p-[50px] rounded-[10px] shadow-xl shadow-neutral-400">
@@ -94,7 +49,6 @@ const Carousel = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-    // </div>
   );
 };
 

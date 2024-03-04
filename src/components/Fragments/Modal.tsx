@@ -1,12 +1,7 @@
 import { FaX } from "react-icons/fa6";
+import { InterfaceModal } from "../../interfaces/interfaceModal";
 
-type PropsType = {
-  open: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-};
-
-const Modal: React.FC<PropsType> = ({ open, onClose, children }) => {
+const Modal: React.FC<InterfaceModal> = ({ open, onClose, children }) => {
   return (
     // backdrop
     <div

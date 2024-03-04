@@ -1,53 +1,13 @@
 import Navbar from "../components/Fragments/Navbar";
 import Monyet2 from "../assets/monyet2.png";
+import DataListAdmin from "../data/dataListAdmin.json";
+import DataListVoter from "../data/dataListVoter.json";
 
 const Admin = () => {
-  const listTable = [
-    {
-      no: "1",
-      name: "Sugeng No Pants",
-      addres: "Cileungsi",
-      gender: "Laki-Laki",
-      paslon: "Paloh",
-    },
-    {
-      no: "2",
-      name: "Haris Gams",
-      addres: "Serang",
-      gender: "Perempuan",
-      paslon: "Surya",
-    },
-    {
-      no: "3",
-      name: "Aziz Union",
-      addres: "Bekasi",
-      gender: "Laki-Laki",
-      paslon: "Cintara",
-    },
-    {
-      no: "4",
-      name: "Lae Tanjung Balai",
-      addres: "Tanjung Balai",
-      gender: "Laki-Laki",
-      paslon: "Paloh",
-    },
-  ];
-
-  const nameList = [
-    {
-      linkTo: "/listpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/listpaslon",
-      list: "Paslon",
-    },
-  ];
-
   return (
     <div>
       <body bg-white>
-        <Navbar textNav="DASHBOARD PEMILU" listItem={nameList} />
+        <Navbar textNav="DASHBOARD PEMILU" listItem={DataListAdmin} />
 
         <main className="flex items-center justify-center flex-col my-[50px]">
           <h1 className="text-[48px] font-[700] text-login">DASHBOARD</h1>
@@ -159,8 +119,8 @@ const Admin = () => {
                 </tr>
               </thead>
               <tbody>
-                {listTable.map((item) => (
-                  <tr className="bg-white">
+                {DataListVoter.map((item, index) => (
+                  <tr key={index} className="bg-white">
                     <td className="py-2 text-center border border-line">
                       {item.no}
                     </td>

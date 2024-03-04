@@ -2,23 +2,16 @@ import Navbar from "../components/Fragments/Navbar";
 import Logo from "../assets/monyet.png";
 import { FaPlus } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import DataListAdmin from "../data/dataListAdmin.json";
 
 const ListPaslon = () => {
-  const nameList = [
-    {
-      linkTo: "/listpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/listpaslon",
-      list: "Paslon",
-    },
-  ];
-
   return (
     <div>
       <body className="bg-white">
-        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
+        <Navbar
+          textNav="PEMILU PRESIDEN DUMBWAYS.ID"
+          listItem={DataListAdmin}
+        />
 
         <main className="flex items-center justify-center flex-col">
           <div>

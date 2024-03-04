@@ -1,9 +1,6 @@
-type Props = {
-  text: string;
-  htmlfor: string;
-};
+import { InterfaceLabel } from "../../../interfaces/interfaceLabel";
 
-const Label = (props: Props) => {
+const Label = (props: InterfaceLabel) => {
   const { text, htmlfor } = props;
   return (
     <div>

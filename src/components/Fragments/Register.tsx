@@ -1,11 +1,8 @@
 import Input from "../Elements/Input/Input";
 import Label from "../Elements/Input/Label";
+import { InterfaceRegister } from "../../interfaces/interfaceRegister";
 
-type Props = {
-  onClickLogin: () => void;
-};
-
-const Register = (props: Props) => {
+const Register = (props: InterfaceRegister) => {
   const { onClickLogin } = props;
   return (
     <div>
@@ -20,6 +17,7 @@ const Register = (props: Props) => {
               <div>
                 <Label text="Fullname" htmlfor="fullname" />
                 <Input
+                  onchange={() => {}}
                   id="fullname"
                   placeholder="Aris Kiflan"
                   type="text"
@@ -30,6 +28,7 @@ const Register = (props: Props) => {
               <div>
                 <Label text="Alamat" htmlfor="alamat" />
                 <Input
+                  onchange={() => {}}
                   placeholder="Alamat"
                   type="text"
                   name="text"
@@ -40,6 +39,7 @@ const Register = (props: Props) => {
               <div>
                 <Label text="Jenis Kelamin" htmlfor="jeniskelamin" />
                 <Input
+                  onchange={() => {}}
                   placeholder="Jenis Kelamin"
                   type="text"
                   name="text"
@@ -50,6 +50,7 @@ const Register = (props: Props) => {
               <div>
                 <Label text="Username" htmlfor="usernameregist" />
                 <Input
+                  onchange={() => {}}
                   placeholder="Example@mail.com"
                   type="text"
                   name="text"
@@ -60,6 +61,7 @@ const Register = (props: Props) => {
               <div>
                 <Label text="Password" htmlfor="passwordregist" />
                 <Input
+                  onchange={() => {}}
                   placeholder="*************"
                   type="password"
                   name="password"

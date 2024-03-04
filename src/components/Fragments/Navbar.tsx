@@ -5,16 +5,9 @@ import { useState } from "react";
 import Modal from "./Modal";
 import Register from "./Register";
 import Login from "./Login";
+import { InterfaceNavbar } from "../../interfaces/interfaceNavbar";
 
-type Props = {
-  textNav: string;
-  listItem: {
-    linkTo: string;
-    list: string;
-  }[];
-};
-
-const Navbar = (props: Props) => {
+const Navbar = (props: InterfaceNavbar) => {
   const { textNav, listItem } = props;
   const [openLogin, setOpenLogin] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);

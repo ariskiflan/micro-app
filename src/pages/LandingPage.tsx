@@ -5,27 +5,13 @@ import DumbwaysLogo from "../assets/brandred.png";
 import KotakSuara from "../assets/kotak-suara.png";
 import SampleKpu from "../assets/sample-kpu.png";
 import { Link } from "react-router-dom";
+import DataListUser from "../data/dataListUser.json";
 
 const LandingPage = () => {
-  const nameList = [
-    {
-      linkTo: "/listpartai",
-      list: "Partai",
-    },
-    {
-      linkTo: "/listpaslon",
-      list: "Paslon",
-    },
-    {
-      linkTo: "/vote",
-      list: "Voting",
-    },
-  ];
-
   return (
     <div>
       <body className="bg-body">
-        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={nameList} />
+        <Navbar textNav="PEMILU PRESIDEN DUMBWAYS.ID" listItem={DataListUser} />
 
         <main className="flex items-center justify-center flex-col z-10">
           {/* HERO */}
