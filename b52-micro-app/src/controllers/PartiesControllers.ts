@@ -1,16 +1,16 @@
 // Controllers for logical system application
 
 import { Request, Response } from "express";
-import UserServices from "../services/UserServices";
+import PartiesService from "../services/PartiesService";
 
-export default new (class UserControllers {
+export default new (class PartiesControllers {
   ///////////////// CREATE /////////////////
   async create(req: Request, res: Response): Promise<Response> {
     try {
       const data = req.body;
-      const user = await UserServices.create(data);
+      const parties = await PartiesService.create(data);
 
-      return res.status(201).json(user);
+      return res.status(201).json(parties);
     } catch (error) {
       return res
         .status(500)
@@ -21,9 +21,9 @@ export default new (class UserControllers {
   ///////////////// FIND /////////////////
   async find(req: Request, res: Response): Promise<Response> {
     try {
-      const user = await UserServices.find();
+      const parties = await PartiesService.find();
 
-      return res.status(200).json(user);
+      return res.status(200).json(parties);
     } catch (error) {
       return res
         .status(500)
@@ -35,9 +35,9 @@ export default new (class UserControllers {
   async getOne(req: Request, res: Response): Promise<Response> {
     try {
       const id = parseInt(req.params.id);
-      const user = await UserServices.getOne(id);
+      const parties = await PartiesService.getOne(id);
 
-      return res.status(200).json(user);
+      return res.status(200).json(parties);
     } catch (error) {
       return res
         .status(500)
@@ -49,8 +49,8 @@ export default new (class UserControllers {
   async delete(req: Request, res: Response): Promise<Response> {
     try {
       const id = parseInt(req.params.id);
-      await UserServices.delete(id);
-      return res.status(200).json({ message: "Delete User Success" });
+      await PartiesService.delete(id);
+      return res.status(200).json({ message: "Delete parties Success" });
     } catch (error) {
       return res
         .status(500)
@@ -63,10 +63,10 @@ export default new (class UserControllers {
     try {
       const id = parseInt(req.params.id);
       const { body } = req;
-      await UserServices.update(body, id);
+      await PartiesService.update(body, id);
       return res
         .status(200)
-        .json({ message: "Update User Success", data: { id: id, ...body } });
+        .json({ message: "Update Parties Success", data: { id: id, ...body } });
     } catch (error) {
       return res
         .status(500)

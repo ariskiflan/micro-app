@@ -15,7 +15,7 @@ export default new (class ArticleService {
       });
 
       await this.repository
-        .createQueryBuilder()
+        .createQueryBuilder("article")
         .insert()
         .into(Article)
         .values(article)
@@ -32,6 +32,7 @@ export default new (class ArticleService {
     try {
       const article = await this.repository
         .createQueryBuilder("article")
+        .leftJoinAndSelect("article.user", "user")
         .getMany();
       return article;
     } catch (error) {
