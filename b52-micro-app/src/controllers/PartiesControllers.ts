@@ -2,13 +2,19 @@
 
 import { Request, Response } from "express";
 import PartiesService from "../services/PartiesService";
+import { partiesValidator } from "../validator/PartiesValidator";
 
 export default new (class PartiesControllers {
   ///////////////// CREATE /////////////////
   async create(req: Request, res: Response): Promise<Response> {
     try {
       const data = req.body;
-      const parties = await PartiesService.create(data);
+      const { error, value } = partiesValidator.validate(data);
+
+      if (error)
+        return res.status(400).json({ message: error.details[0].message });
+
+      const parties = await PartiesService.create(value);
 
       return res.status(201).json(parties);
     } catch (error) {

@@ -1,12 +1,19 @@
 import { Request, Response } from "express";
 import ArticleService from "../services/ArticleService";
+import { articleValidator } from "../validator/ArticleValidator";
 
 export default new (class ArticleControllers {
   ///////////////// CREATE /////////////////
   async create(req: Request, res: Response): Promise<Response> {
     try {
       const data = req.body;
-      await ArticleService.create(data);
+
+      const { error, value } = articleValidator.validate(data);
+
+      if (error)
+        return res.status(400).json({ message: error.details[0].message });
+
+      await ArticleService.create(value);
 
       return res
         .status(200)

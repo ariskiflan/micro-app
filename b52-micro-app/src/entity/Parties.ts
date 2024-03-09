@@ -27,8 +27,8 @@ export class Parties {
   @Column()
   parties_image: string;
 
-  @Column({ name: "candidate_id" })
-  candidateId: number;
+  @Column()
+  candidate_id: number;
 
   @ManyToOne(() => Candidate, (candidate) => candidate.parties)
   @JoinColumn({ name: "candidate_id" })

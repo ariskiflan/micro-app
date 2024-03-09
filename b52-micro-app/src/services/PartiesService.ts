@@ -12,7 +12,7 @@ export default new (class PartiesServices {
         vision_mission: reqBody.vision_mission,
         parties_address: reqBody.parties_address,
         parties_image: reqBody.parties_image,
-        candidateId: reqBody.candidateId,
+        candidate_id: reqBody.candidate_id,
       });
 
       await this.repository
