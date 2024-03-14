@@ -3,7 +3,7 @@ import Label from "../Elements/Input/Label";
 import { InterfaceLogin } from "../../interfaces/interfaceLogin";
 
 const Login = (props: InterfaceLogin) => {
-  const { onclick, onClickRegist, getInputValue } = props;
+  const { onclick, onClickRegist } = props;
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Login = (props: InterfaceLogin) => {
               <div>
                 <Label text="Username" htmlfor="username" />
                 <Input
-                  onchange={getInputValue}
+                  onchange={() => {}}
                   placeholder="example@mail.com"
                   type="text"
                   name="username"
@@ -29,7 +29,7 @@ const Login = (props: InterfaceLogin) => {
               <div>
                 <Label text="Password" htmlfor="password" />
                 <Input
-                  onchange={getInputValue}
+                  onchange={() => {}}
                   placeholder="*********"
                   type="password"
                   name="password"
