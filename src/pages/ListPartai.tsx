@@ -1,10 +1,12 @@
 import Navbar from "../components/Fragments/Navbar";
 import Logo from "../assets/monyet.png";
 import { Link } from "react-router-dom";
-import { FaPlus, FaRegTrashCan, FaRegPenToSquare } from "react-icons/fa6";
+import { FaPlus, FaRegPenToSquare } from "react-icons/fa6";
 import DataListAdmin from "../data/dataListAdmin.json";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
+import DeletePartai from "./DeletePartai";
 
 const ListPartai = () => {
   const [parties, setParties] = useState([]);
@@ -22,15 +24,6 @@ const ListPartai = () => {
   useEffect(() => {
     fetchParties();
   }, []);
-
-  const deleteParties = async (id: number) => {
-    try {
-      await axios.delete(`http://localhost:5000/api/v1/parties/${id}`);
-      fetchParties();
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div className="bg-white">
@@ -105,15 +98,7 @@ const ListPartai = () => {
                           </span>
                         </Link>
 
-                        <button
-                          onClick={() => deleteParties(item.id)}
-                          className="px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-md"
-                        >
-                          <span className="flex items-center gap-1">
-                            <FaRegTrashCan />
-                            Delete
-                          </span>
-                        </button>
+                        <DeletePartai {...item} setParties={fetchParties} />
                       </div>
                     </td>
                   </tr>

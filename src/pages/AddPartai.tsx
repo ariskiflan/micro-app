@@ -5,6 +5,7 @@ import Navbar from "../components/Fragments/Navbar";
 import DataListAdmin from "../data/dataListAdmin.json";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Input from "../components/Elements/Input/Input";
 
 const AddPartai = () => {
   const [value, setValue] = useState({
@@ -56,36 +57,34 @@ const AddPartai = () => {
               <div className="flex flex-col gap-[20px] mb-[50px] ">
                 <div>
                   <Label text="Nama" htmlfor="nama" />
-
-                  <input
+                  <Input
+                    placeholder=""
+                    onchange={getInput}
                     type="text"
                     name="parties_name"
-                    id="nama"
-                    onChange={getInput}
-                    className="border-solid border-[2px] border-black rounded-[10px] text-[14px] w-full px-[5px] py-[5px] placeholder: opacity-50"
+                    id="parties_name"
                   />
                 </div>
 
                 <div>
                   <Label text="Ketua Umum" htmlfor="ketum" />
-
-                  <input
+                  <Input
+                    placeholder=""
+                    onchange={getInput}
                     type="text"
                     name="parties_chairman"
-                    id="ketum"
-                    onChange={getInput}
-                    className="border-solid border-[2px] border-black rounded-[10px] text-[14px] w-full px-[5px] py-[5px] placeholder: opacity-50"
+                    id="parties_chairman"
                   />
                 </div>
 
                 <div>
                   <Label text="Image" htmlfor="image" />
-                  <input
+                  <Input
+                    placeholder=""
+                    onchange={getInput}
                     type="text"
                     name="parties_image"
-                    id="image"
-                    onChange={getInput}
-                    className="border-solid border-[2px] border-black rounded-[10px] text-[14px] w-full px-[5px] py-[5px] placeholder: opacity-50"
+                    id="parties_image"
                   />
                 </div>
 
@@ -102,7 +101,6 @@ const AddPartai = () => {
 
                 <div>
                   <Label text="Alamat" htmlfor="alamat" />
-
                   <input
                     type="text"
                     name="parties_address"
